@@ -85,8 +85,11 @@ section {
 }
 
 a {
-	color:blue;
+	color:#7F5959;
 	text-decoration: none;
+}
+a:visited { 
+	color:#7F5959;
 }
 a:hover { text-decoration: underline; color:green;}
 
