@@ -46,7 +46,8 @@ table {
 
 @import "bourbon/bourbon";
 @import "neat/neat";
-
+$mobile: new-breakpoint(max-width 500px 4);
+$visual-grid:true;
 
 body {
   	@include outer-container;	
@@ -60,14 +61,20 @@ body {
 
 header {
 	@include span-columns(9);
+	@include media($mobile) {
+		@include span-columns(4);
+	}
 	padding-top:40px;
 	padding-bottom:10px;
-	border-bottom:1px dotted green; 
+	border-bottom:1px dotted #CCC; 
 	margin-bottom:20px;
 }
 
 #profile {
 	@include span-columns(9);
+	@include media($mobile) {
+		@include span-columns(4);
+	}	
 }
 
 section {
@@ -81,17 +88,18 @@ section {
 }
 
 .date { 
-	@include span-columns(2); float: right;
+	@include span-columns(2); 
+	float: right;
 }
 
 a {
-	color:#7F5959;
+	color:#5A7F64;
 	text-decoration: none;
 }
 a:visited { 
-	color:#7F5959;
+	color:#5A7F64;
 }
-a:hover { text-decoration: underline; color:green;}
+a:hover { text-decoration: underline; color:#327F49;}
 
 h1, h2, h3, h4, h5 { 
 	text-transform: uppercase;
@@ -100,6 +108,7 @@ h1, h2, h3, h4, h5 {
 h1 {
 	font-size:1.6em;
 	font-weight:bold;
+	margin-bottom:5px;
 }
 
 h2 {
@@ -109,6 +118,9 @@ h2 {
 }
 
 h3 {
+	@include media($mobile) {
+		font-size:1.1em;
+	}	
 	margin-bottom: 5px; 
 	font-size:1.2em;
 	font-weight: bold;
@@ -117,10 +129,13 @@ h3 {
 h4 {
 	margin-bottom: 5px;
 	font-size:1em;
+	font-weight: bold;
+	margin-left: 3em;	
 }
 
 ul {
-
+	@include span-columns(9);	
+	margin-left: 3em;
 }
 
 li {
@@ -130,7 +145,7 @@ li {
 li:before {
     content: "▪";
     padding-right:7px;
-    color: green;
+    color: #CCC;
 }
 
 
